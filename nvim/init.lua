@@ -1,0 +1,8 @@
+require("ezy.plugins-setup")
+require("ezy.core.options")
+require("ezy.core.keymaps")
+require("ezy.core.colorscheme")
+require("ezy.plugins.comment")
+require("ezy.plugins.nvim-tree")
+require("ezy.plugins.lualine")
+require("ezy.plugins.telescope")
