@@ -5,3 +5,8 @@
 
 # whitelist everything in ./nvim
 !nvim/**
+!fish/**
+!alacritty/**
+!ranger/**
+!i3/**
+!polybar/**
