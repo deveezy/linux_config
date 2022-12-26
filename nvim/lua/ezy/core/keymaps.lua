@@ -30,3 +30,4 @@ vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list availa
 
 vim.keymap.set("n", "<m-o>", "<cmd>BrowseBookmarks<cr>")
 vim.keymap.set("n", "<m-i>", "<cmd>BrowseInputSearch<cr>")
+vim.keymap.set("t", "<Esc>", "<C-Bslash><C-n>")

@@ -17,4 +17,5 @@ require("ezy.plugins.cybu")
 require("ezy.plugins.impatient")
 require("ezy.plugins.browser")
 require("ezy.plugins.todo-comments")
+require("ezy.plugins.toggleterm")
 
