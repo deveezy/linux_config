@@ -49,10 +49,19 @@ return require('packer').startup(function(use)
   use("saadparwaiz1/cmp_luasnip")
   use("rafamadriz/friendly-snippets")
 
-  -- utility
+  -- utility:
   use("windwp/nvim-autopairs")
   use('rmagatti/auto-session')
   use("lukas-reineke/indent-blankline.nvim")
+ -- startup
+  use ("goolord/alpha-nvim")
+
+  use("rcarriga/nvim-notify")
+  use("stevearc/dressing.nvim")
+  use("ghillb/cybu.nvim")
+  use("lewis6991/impatient.nvim")
+  use("lalitmee/browse.nvim")
+  use("folke/todo-comments.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
