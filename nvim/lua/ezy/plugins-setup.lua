@@ -64,6 +64,7 @@ return require('packer').startup(function(use)
   use("folke/todo-comments.nvim")
 
   use("akinsho/toggleterm.nvim")
+  use("ahmedkhalf/project.nvim")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

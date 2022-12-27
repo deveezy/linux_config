@@ -2,7 +2,6 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>")
 vim.keymap.set("n", "<leader>+", "<C-a>")
 vim.keymap.set("n", "<leader>-", "<C-x>")
-vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
 
 vim.keymap.set("n", "<leader>sv", "<C-w>v") -- split window veritically
 vim.keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally 
@@ -14,6 +13,12 @@ vim.keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 vim.keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to prev tab
 
+vim.keymap.set("v", "<C-A-j>", ":m'>+<CR>gv=gv")
+vim.keymap.set("v", "<C-A-k>", ":m-2<CR>gv=gv")
+vim.keymap.set("n", "H", "^")
+vim.keymap.set("n", "L", "$")
+vim.keymap.set("v", "H", "^")
+vim.keymap.set("v", "L", "$")
 -- plugin keymaps:
 
 -- vim-maximizer
@@ -31,3 +36,4 @@ vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list availa
 vim.keymap.set("n", "<m-o>", "<cmd>BrowseBookmarks<cr>")
 vim.keymap.set("n", "<m-i>", "<cmd>BrowseInputSearch<cr>")
 vim.keymap.set("t", "<Esc>", "<C-Bslash><C-n>")
+vim.keymap.set("n", "<leader>pp", "<cmd>Telescope projects<cr>")
