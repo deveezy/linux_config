@@ -164,6 +164,11 @@ _G.packer_plugins = {
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/nvim-notify",
     url = "https://github.com/rcarriga/nvim-notify"
   },
+  ["nvim-spectre"] = {
+    loaded = true,
+    path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/nvim-spectre",
+    url = "https://github.com/windwp/nvim-spectre"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",

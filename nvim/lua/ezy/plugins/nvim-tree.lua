@@ -184,7 +184,7 @@ nvim_tree.setup {
         { key = "h", cb = tree_cb "close_node" },
         { key = "<leader>sv", cb = tree_cb "vsplit" },
         { key = "<leader>sh", cb = tree_cb "split" },
-        { key = "<c-e>" } -- just unbind
+        { key = "<C-e>",  action = ""} -- just unbind
       },
     },
     number = false,

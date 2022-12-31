@@ -24,6 +24,13 @@ vim.keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 vim.keymap.set("n", "<leader>tn", ":tabn<CR>") -- go to next tab
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>") -- go to prev tab
 
+vim.keymap.set("n", "<C-Up>", ":resize -2<CR>")
+vim.keymap.set("n", "<C-Down>", ":resize +2<CR>")
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
+
+vim.keymap.set("v", "p", '"_dP')
+
 -- move lines
 vim.keymap.set("v", "<C-A-j>", ":m'>+<CR>gv=gv")
 vim.keymap.set("v", "<C-A-k>", ":m-2<CR>gv=gv")

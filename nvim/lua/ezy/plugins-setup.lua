@@ -65,6 +65,7 @@ return require('packer').startup(function(use)
 
   use("akinsho/toggleterm.nvim")
   use("ahmedkhalf/project.nvim")
+  use("windwp/nvim-spectre")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

@@ -19,4 +19,5 @@ require("ezy.plugins.browser")
 require("ezy.plugins.todo-comments")
 require("ezy.plugins.toggleterm")
 require("ezy.plugins.project")
+require("ezy.plugins.spectre")
 
