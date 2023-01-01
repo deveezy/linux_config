@@ -42,4 +42,3 @@ end, {})
 command("BrowseMdnSearch", function()
   browse.mdn.search()
 end, {})
-

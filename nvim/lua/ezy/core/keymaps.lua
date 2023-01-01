@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>nh", ":nohl<CR>")
+vim.keymap.set("n", "<leader>nh", ":noh<CR>")
 vim.keymap.set("n", "<leader>+", "<C-a>")
 vim.keymap.set("n", "<leader>-", "<C-x>")
 
@@ -9,10 +9,10 @@ vim.keymap.set("t", "<Esc>", "<C-Bslash><C-n>")
 -- Copy/Paste to/from system clipboard
 -- check system clipboard exists ---> :echo has('clipboard')
 vim.keymap.set("n", "<c-c>", '"*y :let @+=@*<CR>', {noremap=true, silent=true})
-vim.keymap.set("n", "<c-v>", '"+p', {noremap=true, silent=true})
+vim.keymap.set("n", "<c-v>", '"+P', {noremap=true, silent=true})
 
 vim.keymap.set("v", "<c-c>", '"*y :let @+=@*<CR>', {noremap=true, silent=true})
-vim.keymap.set("v", "<c-v>", '"+p', {noremap=true, silent=true})
+vim.keymap.set("v", "<c-v>", '"+P', {noremap=true, silent=true})
 
 vim.keymap.set("n", "<leader>sv", "<C-w>v") -- split window veritically
 vim.keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally 
@@ -59,4 +59,17 @@ vim.keymap.set("n", "<leader>pp", "<cmd>Telescope projects<cr>")
 -- browser
 vim.keymap.set("n", "<m-o>", "<cmd>BrowseBookmarks<cr>")
 vim.keymap.set("n", "<m-i>", "<cmd>BrowseInputSearch<cr>")
+
+-- spectre
+vim.keymap.set("n", "<leader>S", "<cmd>Spectre<cr>")
+vim.keymap.set("n", "<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
+
+vim.cmd([[
+  vnoremap <leader>s <esc>:lua require('spectre').open_visual()<CR>
+]])
+
+-- search selected text pressing *
+vim.cmd([[
+  vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>
+]])
 

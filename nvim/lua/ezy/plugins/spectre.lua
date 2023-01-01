@@ -46,6 +46,11 @@ spectre.setup({
       cmd = "<cmd>lua require('spectre').change_view()<CR>",
       desc = "change result view mode",
     },
+    ['toggle_live_update']={
+      map = "tu",
+      cmd = "<cmd>lua require('spectre').toggle_live_update()<CR>",
+      desc = "update change when vim write file."
+    },
     ["toggle_ignore_case"] = {
       map = "I",
       cmd = "<cmd>lua require('spectre').change_options('ignore-case')<CR>",
