@@ -167,6 +167,23 @@ nvim_tree.setup {
   --   dotfiles = false,
   --   custom = {},
   -- },
+ 
+  actions = {
+    open_file = {
+      quit_on_open = false,
+      resize_window = true,
+      window_picker = {
+        enable = true,
+        picker = "default",
+        chars = "1234567890",
+        exclude = {
+          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+          buftype = { "nofile", "terminal", "help" },
+        },
+      },
+    },
+  },
+
   git = {
     enable = true,
     ignore = true,

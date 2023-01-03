@@ -66,7 +66,9 @@ return require('packer').startup(function(use)
   use("akinsho/toggleterm.nvim")
   use("ahmedkhalf/project.nvim")
   use("windwp/nvim-spectre")
-
+  use("andymass/vim-matchup")
+  use("karb94/neoscroll.nvim")
+  use("nacro90/numb.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
