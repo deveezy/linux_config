@@ -69,6 +69,8 @@ return require('packer').startup(function(use)
   use("andymass/vim-matchup")
   use("karb94/neoscroll.nvim")
   use("nacro90/numb.nvim")
+  use("filipdutescu/renamer.nvim")
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then

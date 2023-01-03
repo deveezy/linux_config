@@ -23,4 +23,5 @@ require("ezy.plugins.spectre")
 require("ezy.plugins.matchup")
 require("ezy.plugins.neoscroll")
 require("ezy.plugins.numb")
+require("ezy.plugins.renamer")
 

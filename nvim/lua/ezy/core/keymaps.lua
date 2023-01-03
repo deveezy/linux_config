@@ -56,6 +56,11 @@ vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buf
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 vim.keymap.set("n", "<leader>pp", "<cmd>Telescope projects<cr>")
 
+-- renamer
+vim.keymap.set("n", "<F2>", "<cmd>lua require('renamer').rename({emty = true})<cr>")
+vim.keymap.set("i", "<F2>", "<cmd>lua require('renamer').rename({emty = true})<cr>")
+vim.keymap.set("v", "<F2>", "<cmd>lua require('renamer').rename({emty = true})<cr>")
+
 -- browser
 vim.keymap.set("n", "<m-o>", "<cmd>BrowseBookmarks<cr>")
 vim.keymap.set("n", "<m-i>", "<cmd>BrowseInputSearch<cr>")

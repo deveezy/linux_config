@@ -189,11 +189,6 @@ _G.packer_plugins = {
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["nvim-window-picker"] = {
-    loaded = true,
-    path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/nvim-window-picker",
-    url = "https://github.com/s1n7ax/nvim-window-picker"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -208,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
+  },
+  ["renamer.nvim"] = {
+    loaded = true,
+    path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/renamer.nvim",
+    url = "https://github.com/filipdutescu/renamer.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
