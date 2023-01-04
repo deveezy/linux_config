@@ -21,7 +21,7 @@ require("ezy.plugins.toggleterm")
 require("ezy.plugins.project")
 require("ezy.plugins.spectre")
 require("ezy.plugins.matchup")
-require("ezy.plugins.neoscroll")
 require("ezy.plugins.numb")
 require("ezy.plugins.renamer")
+require("ezy.plugins.illuminate")
 
