@@ -78,3 +78,5 @@ vim.cmd([[
   vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>
 ]])
 
+-- gitblame
+vim.keymap.set("n", "<leader>gb", "<cmd>GitBlameToggle<cr>") -- find files within current working directory, respects .gitignore

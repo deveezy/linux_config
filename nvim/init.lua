@@ -24,4 +24,5 @@ require("ezy.plugins.matchup")
 require("ezy.plugins.numb")
 require("ezy.plugins.renamer")
 require("ezy.plugins.illuminate")
-
+require("ezy.plugins.gitsigns")
+-- require("ezy.plugins.gitblame")
