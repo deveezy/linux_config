@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["auto-save.nvim"] = {
+    loaded = true,
+    path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
+    url = "https://github.com/Pocco81/auto-save.nvim"
+  },
   ["auto-session"] = {
     loaded = true,
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/auto-session",
@@ -124,11 +129,6 @@ _G.packer_plugins = {
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/cybu.nvim",
     url = "https://github.com/ghillb/cybu.nvim"
   },
-  ["diffview.nvim"] = {
-    loaded = true,
-    path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/diffview.nvim",
-    url = "https://github.com/sindrets/diffview.nvim"
-  },
   ["dressing.nvim"] = {
     loaded = true,
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/dressing.nvim",
@@ -158,11 +158,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
-  },
-  neogit = {
-    loaded = true,
-    path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/neogit",
-    url = "https://github.com/TimUntersberger/neogit"
   },
   ["neovim-session-manager"] = {
     loaded = true,
@@ -243,11 +238,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
-  },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-illuminate"] = {
     loaded = true,
