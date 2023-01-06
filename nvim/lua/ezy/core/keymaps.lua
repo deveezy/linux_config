@@ -79,4 +79,4 @@ vim.cmd([[
 ]])
 
 -- gitblame
-vim.keymap.set("n", "<leader>gb", "<cmd>GitBlameToggle<cr>") -- find files within current working directory, respects .gitignore
+vim.keymap.set("n", "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>") -- find files within current working directory, respects .gitignore
