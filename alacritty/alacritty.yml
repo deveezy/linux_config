@@ -3,8 +3,8 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
-  # TERM variable
+env:
+  TERM: xterm-256color
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
@@ -191,10 +191,27 @@ colors:
   #
   # Colors which should be used to draw the terminal cursor. If these are unset,
   # the cursor color will be the inverse of the cell color.
-  cursor:
-   text: '0x000000'
-   cursor: '0xff00ff'
+cursor:
+  #Cursor style
+  style:
+    # Cursor shape
+    #
+    # Values for `shape`:
+    #   - ▇ Block
+    #   - _ Underline
+    #   - | Beam
+    shape: Block
 
+    # Cursor blinking state
+    #
+    # Values for `blinking`:
+    #   - Never: Prevent the cursor from ever blinking
+    #   - Off: Disable blinking by default
+    #   - On: Enable blinking by default
+    #   - Always: Force the cursor to always blink
+    blinking: Always
+  blink_interval: 250
+  blink_timeout: 0
   # Selection colors
   #
   # Colors which should be used to draw the selection area. If selection
@@ -318,19 +335,6 @@ selection:
 
 # Allow terminal applications to change Alacritty's window title.
 dynamic_title: true
-
-cursor:
-  # Cursor style
-  #
-  # Values for `style`:
-  #   - ‚ñá Block
-  #   - _ Underline
-  #   - | Beam
-  style: Block
-
-  # If this is `true`, the cursor will be rendered as a hollow box when the
-  # window is not focused.
-  unfocused_hollow: true
 
 # Live config reload (changes require restart)
 live_config_reload: true
