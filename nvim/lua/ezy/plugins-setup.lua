@@ -72,9 +72,10 @@ return require('packer').startup(function(use)
 
   use("RRethy/vim-illuminate")
   use("Shatur/neovim-session-manager")
-  use ('lewis6991/gitsigns.nvim')
-  use ("TimUntersberger/neogit")
-  -- use('f-person/git-blame.nvim')
+  use('lewis6991/gitsigns.nvim')
+  use("tpope/vim-fugitive")
+  use("sindrets/diffview.nvim")
+  -- use("TimUntersberger/neogit")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

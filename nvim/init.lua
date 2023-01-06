@@ -25,4 +25,3 @@ require("ezy.plugins.numb")
 require("ezy.plugins.renamer")
 require("ezy.plugins.illuminate")
 require("ezy.plugins.gitsigns")
--- fjdkasfjka
