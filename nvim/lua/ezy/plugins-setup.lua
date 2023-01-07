@@ -79,6 +79,7 @@ return require('packer').startup(function(use)
   use("akinsho/bufferline.nvim")
   use "moll/vim-bbye"
   use("nanozuki/tabby.nvim")
+  use("mg979/vim-visual-multi")
   
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

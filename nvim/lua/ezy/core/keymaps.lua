@@ -46,7 +46,8 @@ vim.keymap.set("v", "L", "$")
 vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 -- nvim-tree
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>")
+vim.keymap.set("n", "<m-`>", ":NvimTreeToggle<CR>")
 
 -- telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
@@ -87,5 +88,5 @@ vim.keymap.set("n", "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>Bdelete!<CR>")
 vim.keymap.set("n", "Q", "<cmd>:bufdo :Bdelete!<CR>")
 
-vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
-vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
+-- vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
+-- vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
