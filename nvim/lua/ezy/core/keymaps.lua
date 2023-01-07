@@ -55,6 +55,8 @@ vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find stri
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 vim.keymap.set("n", "<leader>pp", "<cmd>Telescope projects<cr>")
+vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>")
+vim.keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>")
 
 -- renamer
 vim.keymap.set("n", "<F2>", "<cmd>lua require('renamer').rename({emty = true})<cr>")

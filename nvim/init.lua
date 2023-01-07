@@ -26,4 +26,6 @@ require("ezy.plugins.renamer")
 require("ezy.plugins.illuminate")
 require("ezy.plugins.gitsigns")
 require("ezy.plugins.vscode_scheme")
-require("ezy.plugins.bufferline")
+require("ezy.plugins.tabby")
+-- require("ezy.plugins.bufferline")
+

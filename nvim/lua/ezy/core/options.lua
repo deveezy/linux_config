@@ -32,3 +32,6 @@ opt.backspace = "indent,eol,start"
 opt.splitright = true
 opt.splitbelow = true
 opt.iskeyword:append("-")
+
+opt.showtabline = 2
+opt.hidden = true
