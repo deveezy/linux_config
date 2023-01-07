@@ -76,6 +76,8 @@ return require('packer').startup(function(use)
   use("Pocco81/auto-save.nvim")
   -- use("TimUntersberger/neogit")
   use('Mofiqul/vscode.nvim')
+  use("akinsho/bufferline.nvim")
+  use "moll/vim-bbye"
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
