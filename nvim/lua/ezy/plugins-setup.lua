@@ -80,9 +80,10 @@ return require('packer').startup(function(use)
   use "moll/vim-bbye"
   use("nanozuki/tabby.nvim")
   use("mg979/vim-visual-multi")
+  use ("Civitasv/cmake-tools.nvim")
 
   -- LSP
-   use ("neovim/nvim-lspconfig")
+  use ("neovim/nvim-lspconfig")
   
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

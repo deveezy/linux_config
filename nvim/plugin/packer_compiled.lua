@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  ["cmake-tools.nvim"] = {
+    loaded = true,
+    path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/cmake-tools.nvim",
+    url = "https://github.com/Civitasv/cmake-tools.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/cmp-buffer",

@@ -28,5 +28,6 @@ require("ezy.plugins.gitsigns")
 require("ezy.plugins.vscode_scheme")
 require("ezy.plugins.tabby")
 require("ezy.plugins.lsp")
+require("ezy.plugins.cmake-tools")
 -- require("ezy.plugins.bufferline")
 

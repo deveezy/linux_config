@@ -9,7 +9,7 @@ vim.keymap.set("t", "<Esc>", "<C-Bslash><C-n>")
 -- Copy/Paste to/from system clipboard
 -- check system clipboard exists ---> :echo has('clipboard')
 vim.keymap.set("n", "<c-c>", '"*y :let @+=@*<CR>', {noremap=true, silent=true})
-vim.keymap.set("n", "<c-v>", '"+P', {noremap=true, silent=true})
+vim.keymap.set("n", "<c-v>", '"+p', {noremap=true, silent=true})
 
 vim.keymap.set("v", "<c-c>", '"*y :let @+=@*<CR>', {noremap=true, silent=true})
 vim.keymap.set("v", "<c-v>", '"+P', {noremap=true, silent=true})
@@ -93,3 +93,4 @@ vim.keymap.set("n", "Q", "<cmd>:bufdo :Bdelete!<CR>")
 
 vim.keymap.set("n", "K", ":lua show_documentation()<CR>")
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
