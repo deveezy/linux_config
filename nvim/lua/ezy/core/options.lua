@@ -35,3 +35,5 @@ opt.iskeyword:append("-")
 
 opt.showtabline = 2
 opt.hidden = true
+
+vim.cmd[[autocmd FileType * setlocal formatoptions-=cro]]
