@@ -21,10 +21,10 @@ require('vscode').setup({
         CursorLine  = {bg ='#1a1a1a' },
         -- StatusLineNC =  {fg = '#FF0000', bg = '#FF0000'},
         -- StatusLine=  {fg = '#FF0000', bg = '#FF0000'}
-        TabLine = {fg = '#FF0000', bg = '#FF0000'},
-        TabLineFill = {fg = '#FF0000', bg = '#FF0000'},
-        TabLineSel = {fg = '#FF0000', bg = '#FF0000'},
-        Title = {fg = '#FF0000', bg = '#FF0000'}
+        -- TabLine = {fg = '#FF0000', bg = '#FF0000'},
+        -- TabLineFill = {fg = '#FF0000', bg = '#FF0000'},
+        -- TabLineSel = {fg = '#FF0000', bg = '#FF0000'},
+        -- Title = {fg = '#FF0000', bg = '#FF0000'}
     }
 })
 

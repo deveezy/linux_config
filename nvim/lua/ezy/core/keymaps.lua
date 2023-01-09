@@ -50,7 +50,7 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeFocus<CR>")
 vim.keymap.set("n", "<m-`>", ":NvimTreeToggle<CR>")
 
 -- telescope
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>") -- find files within current working directory, respects .gitignore
 -- find string in current working directory as you type
 vim.keymap.set("n", "<leader>fs", ":lua require'telescope.builtin'.live_grep{ vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '-u', } }<cr>")
 vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
@@ -91,6 +91,18 @@ vim.keymap.set("n", "Q", "<cmd>:bufdo :Bdelete!<CR>")
 
 -- vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
 -- vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
+
+local opts = { noremap = true, silent = true }
+show_documentation = function()
+  local filetype = vim.bo.filetype
+  if vim.tbl_contains({ "vim", "help" }, filetype) then
+    vim.cmd("h " .. vim.fn.expand "<cword>")
+  elseif vim.tbl_contains({ "man" }, filetype) then
+    vim.cmd("Man " .. vim.fn.expand "<cword>")
+  else
+    vim.lsp.buf.hover()
+  end
+end
 
 vim.keymap.set("n", "K", ":lua show_documentation()<CR>")
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
