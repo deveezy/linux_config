@@ -76,16 +76,18 @@ nvim_tree.setup {
     "dashboard",
     "alpha",
   },
+  -- filters.dotfiles = false,
   filters = {
+    dotfiles = false
     -- custom = { ".git" },
-    exclude = { ".gitignore" },
+    -- exclude = { ".gitignore" },
   },
   open_on_setup = true,
   open_on_setup_file = true,
   -- auto_close = true,
   -- open_on_tab = false,
-  -- hijack_cursor = false,
-  update_cwd = false,
+  hijack_cursor = true,
+  update_cwd = true,
   -- update_to_buf_dir = {
   --   enable = true,
   --   auto_open = true,
@@ -177,8 +179,8 @@ nvim_tree.setup {
         picker = "default",
         chars = "1234567890",
         exclude = {
-          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
-          buftype = { "nofile", "terminal", "help" },
+          -- filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+          -- buftype = { "nofile", "terminal", "help" },
         },
       },
     },
@@ -186,7 +188,7 @@ nvim_tree.setup {
 
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
     timeout = 500,
   },
   view = {

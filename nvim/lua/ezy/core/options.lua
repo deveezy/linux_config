@@ -37,3 +37,5 @@ opt.showtabline = 2
 opt.hidden = true
 
 vim.cmd[[autocmd FileType * setlocal formatoptions-=cro]]
+-- vim.cmd[[au BufEnter * setlocal cursorline]]
+-- vim.cmd[[au BufLeave * setlocal nocursorline]]

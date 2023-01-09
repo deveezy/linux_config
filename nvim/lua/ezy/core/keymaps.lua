@@ -51,7 +51,8 @@ vim.keymap.set("n", "<m-`>", ":NvimTreeToggle<CR>")
 
 -- telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
-vim.keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
+-- find string in current working directory as you type
+vim.keymap.set("n", "<leader>fs", ":lua require'telescope.builtin'.live_grep{ vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '-u', } }<cr>")
 vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 vim.keymap.set("n", "<leader>fb", ":lua require('telescope.builtin').buffers({only_cwd = true})<cr>") -- list open buffers in current neovim instance
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
@@ -94,3 +95,15 @@ vim.keymap.set("n", "Q", "<cmd>:bufdo :Bdelete!<CR>")
 vim.keymap.set("n", "K", ":lua show_documentation()<CR>")
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
+
+-- cmake-tools
+vim.keymap.set("n", "cg", "<cmd>CMakeGenerate<cr>")
+vim.keymap.set("n", "cb", "<cmd>CMakeBuild<cr>")
+vim.keymap.set("n", "<F5>", "<cmd>CMakeRun<cr>")
+vim.keymap.set("n", "<C-F5>", "<cmd>CMakeDebug<cr>")
+vim.keymap.set("n", "cs", "<cmd>CMakeStop<cr>")
+vim.keymap.set("n", "co", "<cmd>CMakeOpen<cr>")
+vim.keymap.set("n", "cx", "<cmd>CMakeClose<cr>")
+vim.keymap.set("n", "cc", "<cmd>CMakeClean<cr>")
+vim.keymap.set("n", "ct", "<cmd>CMakeSelectBuildType<cr>")
+

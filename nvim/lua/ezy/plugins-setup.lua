@@ -16,6 +16,7 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	-- colorscheme
 	use("bluz71/vim-nightfly-guicolors")
+  use("tomasiser/vim-code-dark")
 	-- window navigation ctrl + {motion}
 	use("christoomey/vim-tmux-navigator")
 	-- maximizes and restores current window
