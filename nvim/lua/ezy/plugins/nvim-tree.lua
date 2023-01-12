@@ -8,7 +8,6 @@
 -- vim.g.loaded_netrwPlugin = 1
 --
 -- -- change color for arrows in tree to light blue
--- vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 --
 -- -- configure nvim-tree
 -- nvimtree.setup({
@@ -87,7 +86,7 @@ nvim_tree.setup {
   -- auto_close = true,
   -- open_on_tab = false,
   hijack_cursor = true,
-  update_cwd = true,
+  update_cwd = false,
   -- update_to_buf_dir = {
   --   enable = true,
   --   auto_open = true,

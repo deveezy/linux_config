@@ -81,7 +81,7 @@ return require('packer').startup(function(use)
   use "moll/vim-bbye"
   use("nanozuki/tabby.nvim")
   use("mg979/vim-visual-multi")
-  use ("Civitasv/cmake-tools.nvim")
+  use("Civitasv/cmake-tools.nvim")
 
   -- LSP
   use ("neovim/nvim-lspconfig")
