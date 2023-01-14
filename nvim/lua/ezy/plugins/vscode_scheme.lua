@@ -17,7 +17,7 @@ require('vscode').setup({
     group_overrides = {
         -- this supports the same val table as vim.api.nvim_set_hl
         -- use colors from this colorscheme by requiring vscode.colors!
-        Comment = {fg = '#6e6e6e'},
+        -- Comment = {fg = '#6e6e6e'},
     }
 })
 

@@ -70,6 +70,6 @@ end
 
 setup()
 
-require'lspconfig'.clangd.setup{ -- connect to server
+require'lspconfig'.clangd.setup {
 } 
 
