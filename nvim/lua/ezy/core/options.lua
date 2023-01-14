@@ -36,6 +36,9 @@ opt.iskeyword:append("-")
 opt.showtabline = 2
 opt.hidden = true
 
+opt.jumpoptions:append("stack")
+
 vim.cmd[[autocmd FileType * setlocal formatoptions-=cro]]
+vim.cmd[[autocmd VimEnter * :clearjumps]]
 -- vim.cmd[[au BufEnter * setlocal cursorline]]
 -- vim.cmd[[au BufLeave * setlocal nocursorline]]

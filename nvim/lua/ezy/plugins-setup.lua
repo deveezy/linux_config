@@ -23,8 +23,6 @@ return require('packer').startup(function(use)
 	use("szw/vim-maximizer") 
 	-- surround text
 	use("tpope/vim-surround")
-	-- replace without corrupting register x.
-	use("vim-scripts/ReplaceWithRegister")
 	-- unified comments
 	use("numToStr/Comment.nvim")
 
@@ -44,6 +42,7 @@ return require('packer').startup(function(use)
   use("hrsh7th/nvim-cmp")
   use("hrsh7th/cmp-buffer")
   use("hrsh7th/cmp-path")
+  use("hrsh7th/cmp-nvim-lsp")
 
   -- snippets
   use("L3MON4D3/LuaSnip")
@@ -84,7 +83,9 @@ return require('packer').startup(function(use)
   use("Civitasv/cmake-tools.nvim")
 
   -- LSP
-  use ("neovim/nvim-lspconfig")
+  use("neovim/nvim-lspconfig")
+  use("williamboman/nvim-lsp-installer")
+  use("sbdchd/neoformat")
   
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

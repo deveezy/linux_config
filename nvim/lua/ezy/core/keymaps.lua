@@ -52,7 +52,7 @@ vim.keymap.set("n", "<m-`>", ":NvimTreeToggle<CR>")
 -- telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>") -- find files within current working directory, respects .gitignore
 -- find string in current working directory as you type
-vim.keymap.set("n", "<leader>fs", ":lua require'telescope.builtin'.live_grep{ vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '-u', } }<cr>")
+vim.keymap.set("n", "<leader>fs", ":lua require'telescope.builtin'.live_grep{ only_cwd = true, vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '-u', } }<cr>")
 vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 vim.keymap.set("n", "<leader>fb", ":lua require('telescope.builtin').buffers({only_cwd = true})<cr>") -- list open buffers in current neovim instance
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
@@ -107,6 +107,19 @@ end
 vim.keymap.set("n", "K", ":lua show_documentation()<CR>")
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
+vim.keymap.set("n", "gt", vim.lsp.buf.type_definition)
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
+vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next)
+vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "<leader>dl", "<cmd> Telescope diagnostics<CR>")
+vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
+vim.keymap.set("n", "gh", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
+vim.keymap.set("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<CR>")
+vim.keymap.set("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>")
+vim.keymap.set('n', 'gR', vim.lsp.buf.references)
+vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<CR>")
+vim.keymap.set("n", "<leader>cf", "<cmd>Neoformat<CR>") -- code format
+
 
 -- cmake-tools
 vim.keymap.set("n", "cg", "<cmd>CMakeGenerate<cr>")
