@@ -87,6 +87,8 @@ return require('packer').startup(function(use)
   use("sbdchd/neoformat")
   use("p00f/clangd_extensions.nvim")
 
+  use("sindrets/diffview.nvim")
+
   -- use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
   -- use("nvim-treesitter/playground")
   -- use{"neoclide/coc.nvim", branch = 'release'}
