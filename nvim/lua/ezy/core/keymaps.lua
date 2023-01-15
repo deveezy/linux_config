@@ -89,8 +89,11 @@ vim.keymap.set("n", "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>Bdelete!<CR>")
 vim.keymap.set("n", "Q", "<cmd>:bufdo :Bdelete!<CR>")
 
--- vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
--- vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
+vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
+vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
+
+vim.keymap.set("n", "bk", ":bn<CR>")
+vim.keymap.set("n", "bj", ":bp<CR>")
 
 local opts = { noremap = true, silent = true }
 show_documentation = function()
