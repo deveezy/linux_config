@@ -154,11 +154,6 @@ _G.packer_plugins = {
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  gruvbox = {
-    loaded = true,
-    path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/morhetz/gruvbox"
-  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/impatient.nvim",
@@ -214,6 +209,11 @@ _G.packer_plugins = {
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/nvim-notify",
     url = "https://github.com/rcarriga/nvim-notify"
   },
+  ["nvim-semantic-tokens"] = {
+    loaded = true,
+    path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/nvim-semantic-tokens",
+    url = "https://github.com/theHamsta/nvim-semantic-tokens"
+  },
   ["nvim-spectre"] = {
     loaded = true,
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/nvim-spectre",
@@ -224,11 +224,6 @@ _G.packer_plugins = {
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
-  ["nvim-treesitter"] = {
-    loaded = true,
-    path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -238,11 +233,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
-  },
-  playground = {
-    loaded = true,
-    path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/playground",
-    url = "https://github.com/nvim-treesitter/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,

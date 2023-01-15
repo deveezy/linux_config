@@ -86,10 +86,14 @@ return require('packer').startup(function(use)
   use("neovim/nvim-lspconfig")
   use("williamboman/nvim-lsp-installer")
   use("sbdchd/neoformat")
-  use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
-  use("nvim-treesitter/playground")
-  use("morhetz/gruvbox")
-  
+  use("theHamsta/nvim-semantic-tokens")
+
+  -- use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
+  -- use("nvim-treesitter/playground")
+  -- use{"neoclide/coc.nvim", branch = 'release'}
+  -- use("clangd/coc-clangd")
+  -- use("jackguo380/vim-lsp-cxx-highlight")
+  -- 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then

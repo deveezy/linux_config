@@ -121,6 +121,8 @@ vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<CR>")
 vim.keymap.set("n", "<leader>cf", "<cmd>Neoformat<CR>") -- code format
 
 
+vim.keymap.set("n", "<leader>tt", "<cmd>lua vim.lsp.buf.semantic_tokens_full()<CR>")
+
 -- cmake-tools
 vim.keymap.set("n", "cg", "<cmd>CMakeGenerate<cr>")
 vim.keymap.set("n", "cb", "<cmd>CMakeBuild<cr>")
