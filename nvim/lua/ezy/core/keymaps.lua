@@ -31,7 +31,10 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 
 vim.keymap.set("v", "p", '"_dP')
 
--- move lines
+vim.keymap.set("n", "x", '"_x')
+vim.keymap.set("v", "x", '"_x')
+
+-- move line
 vim.keymap.set("v", "<C-A-j>", ":m'>+<CR>gv=gv")
 vim.keymap.set("v", "<C-A-k>", ":m-2<CR>gv=gv")
 
