@@ -54,7 +54,7 @@ vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>") -
 -- find string in current working directory as you type
 vim.keymap.set("n", "<leader>fs", ":lua require'telescope.builtin'.live_grep{ only_cwd = true, vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '-u', } }<cr>")
 vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
-vim.keymap.set("n", "<leader>fb", ":lua require('telescope.builtin').buffers({only_cwd = true})<cr>") -- list open buffers in current neovim instance
+vim.keymap.set("n", "<leader>fb", ":lua require('telescope.builtin').buffers({ sort_mru = true, sort_lastused = true, ignore_current_buffer = true, only_cwd = true})<cr>") -- list open buffers in current neovim instance
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 vim.keymap.set("n", "<leader>pp", "<cmd>Telescope projects<cr>")
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>")
@@ -121,7 +121,7 @@ vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<CR>")
 vim.keymap.set("n", "<leader>cf", "<cmd>Neoformat<CR>") -- code format
 
 
-vim.keymap.set("n", "<leader>tt", "<cmd>lua vim.lsp.buf.semantic_tokens_full()<CR>")
+vim.keymap.set("n", "<leader>tt", "<cmd>vim.lsp.semantic_tokens.get_at_pos()<CR>")
 
 -- cmake-tools
 vim.keymap.set("n", "cg", "<cmd>CMakeGenerate<cr>")

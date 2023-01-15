@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
+  ["clangd_extensions.nvim"] = {
+    loaded = true,
+    path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/clangd_extensions.nvim",
+    url = "https://github.com/p00f/clangd_extensions.nvim"
+  },
   ["cmake-tools.nvim"] = {
     loaded = true,
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/cmake-tools.nvim",
@@ -133,11 +138,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
-  },
-  ["cybu.nvim"] = {
-    loaded = true,
-    path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/cybu.nvim",
-    url = "https://github.com/ghillb/cybu.nvim"
   },
   ["dressing.nvim"] = {
     loaded = true,
@@ -208,11 +208,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/nvim-notify",
     url = "https://github.com/rcarriga/nvim-notify"
-  },
-  ["nvim-semantic-tokens"] = {
-    loaded = true,
-    path = "/home/deveezy/.local/share/nvim/site/pack/packer/start/nvim-semantic-tokens",
-    url = "https://github.com/theHamsta/nvim-semantic-tokens"
   },
   ["nvim-spectre"] = {
     loaded = true,
