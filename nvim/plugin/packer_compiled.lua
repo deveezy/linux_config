@@ -224,6 +224,16 @@ _G.packer_plugins = {
     path = "/home/noname/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/nvim-tree/nvim-tree.lua"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/noname/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-treesitter-cpp-tools"] = {
+    loaded = true,
+    path = "/home/noname/.local/share/nvim/site/pack/packer/start/nvim-treesitter-cpp-tools",
+    url = "https://github.com/Badhi/nvim-treesitter-cpp-tools"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/noname/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",

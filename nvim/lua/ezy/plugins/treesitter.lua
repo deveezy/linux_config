@@ -11,9 +11,8 @@ require'nvim-treesitter.configs'.setup {
 
   highlight = {
     -- `false` will disable the whole extension
-    enable = true,
+    enable = false,
     custom_captures = {
-      -- ["proc_arg"] = "Identifier"
     },
 
 
@@ -23,15 +22,26 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+  nt_cpp_tools = {
+    enable = true,
+    preview = {
+      quit = 'q', -- optional keymapping for quit preview
+      accept = '<tab>' -- optional keymapping for accept preview
+    },
+    -- header_extension = 'hpp', -- optional
+    -- source_extension = 'cpp', -- optional
+    custom_define_class_function_commands = { -- optional
+    TSCppImplWrite = {
+      output_handle = require'nvim-treesitter.nt-cpp-tools.output_handlers'.get_add_to_cpp()
+    }
+    --[[
+    <your impl function custom command name> = {
+    output_handle = function (str, context) 
+    -- string contains the class implementation
+    -- do whatever you want to do with it
+    end
+    }
+    ]]
+  }
 }
-
-
-vim.api.nvim_set_hl(0, "@namespace", { fg = "#d7d7d7" })
-vim.api.nvim_set_hl(0, "@keyword", { fg = "#569CD6" })
-vim.api.nvim_set_hl(0, "@comment", { fg = "#6e6e6e" })
-vim.api.nvim_set_hl(0, "@preproc", { fg = "#9c9c9c" })
-vim.api.nvim_set_hl(0, "@include", { fg = "#9c9c9c" })
-vim.api.nvim_set_hl(0, "@define", { fg = "#9c9c9c" })
--- vim.api.nvim_set_hl(0, "@proc_arg", { fg = "#9c9c9c" })
--- vim.api.nvim_set_hl(0, "@error", { fg = "#25BED0" })
-vim.api.nvim_set_hl(0, "@test2", { fg = "#ffff00" })
+}

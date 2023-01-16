@@ -89,6 +89,11 @@ return require('packer').startup(function(use)
 
   use("sindrets/diffview.nvim")
 
+  use {
+    requires = { "nvim-treesitter/nvim-treesitter" },
+    "Badhi/nvim-treesitter-cpp-tools",
+  }
+
   -- use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
   -- use("nvim-treesitter/playground")
   -- use{"neoclide/coc.nvim", branch = 'release'}

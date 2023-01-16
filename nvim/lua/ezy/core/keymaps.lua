@@ -55,7 +55,7 @@ vim.keymap.set("n", "<m-`>", ":NvimTreeToggle<CR>")
 -- telescope
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>") -- find files within current working directory, respects .gitignore
 -- find string in current working directory as you type
-vim.keymap.set("n", "<leader>fs", ":lua require'telescope.builtin'.live_grep{ only_cwd = true, vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '-u', } }<cr>")
+vim.keymap.set("n", "<leader>fs", ":lua require'telescope.builtin'.live_grep{ only_cwd = true}<cr>")
 vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 vim.keymap.set("n", "<leader>fb", ":lua require('telescope.builtin').buffers({ sort_mru = true, sort_lastused = true, ignore_current_buffer = true, only_cwd = true})<cr>") -- list open buffers in current neovim instance
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
@@ -77,12 +77,12 @@ vim.keymap.set("n", "<leader>S", "<cmd>Spectre<cr>")
 vim.keymap.set("n", "<leader>sw", "<cmd>lua require('spectre').open_visual({select_word=true})<CR>")
 
 vim.cmd([[
-  vnoremap <leader>s <esc>:lua require('spectre').open_visual()<CR>
+vnoremap <leader>s <esc>:lua require('spectre').open_visual()<CR>
 ]])
 
 -- search selected text pressing *
 vim.cmd([[
-  vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>
+vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>
 ]])
 
 -- gitblame
@@ -94,9 +94,6 @@ vim.keymap.set("n", "Q", "<cmd>:bufdo :Bdelete!<CR>")
 
 vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
 vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
-
-vim.keymap.set("n", "bk", ":bn<CR>")
-vim.keymap.set("n", "bj", ":bp<CR>")
 
 local opts = { noremap = true, silent = true }
 show_documentation = function()
@@ -140,4 +137,7 @@ vim.keymap.set("n", "co", "<cmd>CMakeOpen<cr>")
 vim.keymap.set("n", "cx", "<cmd>CMakeClose<cr>")
 vim.keymap.set("n", "cc", "<cmd>CMakeClean<cr>")
 vim.keymap.set("n", "ct", "<cmd>CMakeSelectBuildType<cr>")
+
+vim.keymap.set('n', '<leader>i', "<cmd>TSCppImplWrite<CR>")
+vim.keymap.set('n', '<leader>rf', "<cmd>TSCppRuleOf5<CR>")
 

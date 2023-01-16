@@ -186,3 +186,9 @@ vim.api.nvim_set_hl(0, "cDefine", { fg = "#969798" })
 vim.api.nvim_set_hl(0, "Statement", { fg = "#569cd6" })
 vim.api.nvim_set_hl(0, "@typeParameter", { fg = "#4ec9b0" })
 vim.api.nvim_set_hl(0, "@parameter", { fg = "#969798" })
+vim.api.nvim_set_hl(0, "Label", { fg = "#569cd6" })
+vim.api.nvim_set_hl(0, "Operator", { fg = "#569cd6" })
+
+vim.api.nvim_set_hl(0, "@variable.fileScope", { fg = "#ffffff" })
+-- hi @variable.fileScope guifg=#000000
+-- :hi @variable.readonly fg=green
