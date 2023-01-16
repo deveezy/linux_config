@@ -122,9 +122,10 @@ vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
 vim.keymap.set("n", "gh", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
 vim.keymap.set("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<CR>")
 vim.keymap.set("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>")
+vim.keymap.set("n", "<leader>'", "<cmd>ClangdSwitchSourceHeader<CR>")
 vim.keymap.set('n', 'gR', vim.lsp.buf.references)
 vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<CR>")
-vim.keymap.set("n", "<leader>cf", "<cmd>Neoformat<CR>") -- code format
+vim.keymap.set("n", "<C-m>", "<cmd>Neoformat<CR>") -- code format
 
 
 vim.keymap.set("n", "<leader>tt", "<cmd>vim.lsp.semantic_tokens.get_at_pos()<CR>")
