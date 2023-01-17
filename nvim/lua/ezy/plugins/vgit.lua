@@ -2,11 +2,11 @@ require('vgit').setup({
   keymaps = {
     ['n <C-k>'] = function() require('vgit').hunk_up() end,
     ['n <C-j>'] = function() require('vgit').hunk_down() end,
-    ['n <leader>gs'] = function() require('vgit').buffer_hunk_stage() end,
-    ['n <leader>gr'] = function() require('vgit').buffer_hunk_reset() end,
-    ['n <leader>gp'] = function() require('vgit').buffer_hunk_preview() end,
-    ['n <leader>gb'] = function() require('vgit').buffer_blame_preview() end,
-    ['n <leader>gf'] = function() require('vgit').buffer_diff_preview() end,
+    ['n gs'] = function() require('vgit').buffer_hunk_stage() end,
+    ['n gr'] = function() require('vgit').buffer_hunk_reset() end,
+    ['n gp'] = function() require('vgit').buffer_hunk_preview() end,
+    ['n gb'] = function() require('vgit').buffer_blame_preview() end,
+    ['n gf'] = function() require('vgit').buffer_diff_preview() end,
     ['n <leader>gh'] = function() require('vgit').buffer_history_preview() end,
     ['n <leader>gu'] = function() require('vgit').buffer_reset() end,
     ['n <leader>gg'] = function() require('vgit').buffer_gutter_blame_preview() end,
@@ -129,7 +129,7 @@ require('vgit').setup({
       enabled = true,
     },
     scene = {
-      diff_preference = 'unified', -- unified or split
+      diff_preference = 'split', -- unified or split
       keymaps = {
         quit = 'q'
       }
