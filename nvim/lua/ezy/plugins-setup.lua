@@ -71,7 +71,7 @@ return require('packer').startup(function(use)
 
   use("RRethy/vim-illuminate")
   use("Shatur/neovim-session-manager")
-  use('lewis6991/gitsigns.nvim')
+  -- use('lewis6991/gitsigns.nvim')
   use("Pocco81/auto-save.nvim")
   -- use("TimUntersberger/neogit")
   use('Mofiqul/vscode.nvim')
@@ -87,12 +87,14 @@ return require('packer').startup(function(use)
   use("sbdchd/neoformat")
   use("p00f/clangd_extensions.nvim")
 
-  use("sindrets/diffview.nvim")
+  -- use("sindrets/diffview.nvim")
 
   use {
     requires = { "nvim-treesitter/nvim-treesitter" },
     "Badhi/nvim-treesitter-cpp-tools",
   }
+
+  use("tanvirtin/vgit.nvim")
 
   -- use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
   -- use("nvim-treesitter/playground")

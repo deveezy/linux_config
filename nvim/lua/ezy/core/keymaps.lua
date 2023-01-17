@@ -141,3 +141,7 @@ vim.keymap.set("n", "ct", "<cmd>CMakeSelectBuildType<cr>")
 vim.keymap.set('n', '<leader>i', "<cmd>TSCppImplWrite<CR>")
 vim.keymap.set('n', '<leader>rf', "<cmd>TSCppRuleOf5<CR>")
 
+vim.keymap.set('n', '<leader>gb', "<cmd> lua require('vgit').toggle_live_blame()<CR>", {noremap = true})
+-- "<cmd>lua require('usermod').somefunction()<CR>",
+
+
