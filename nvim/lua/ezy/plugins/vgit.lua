@@ -3,7 +3,7 @@ require('vgit').setup({
     ['n <C-k>'] = function() require('vgit').hunk_up() end,
     ['n <C-j>'] = function() require('vgit').hunk_down() end,
     ['n gs'] = function() require('vgit').buffer_hunk_stage() end,
-    ['n gr'] = function() require('vgit').buffer_hunk_reset() end,
+    -- ['n gr'] = function() require('vgit').buffer_hunk_reset() end,
     ['n gp'] = function() require('vgit').buffer_hunk_preview() end,
     ['n gb'] = function() require('vgit').buffer_blame_preview() end,
     ['n gf'] = function() require('vgit').buffer_diff_preview() end,
