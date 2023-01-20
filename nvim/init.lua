@@ -32,4 +32,7 @@ require("ezy.plugins.lualine")
 -- require("ezy.plugins.diffview")
 require("ezy.plugins.treesitter")
 require("ezy.plugins.vgit")
+require("ezy.plugins.scope")
+require("ezy.plugins.aerial")
+
 -- require("ezy.plugins.three")

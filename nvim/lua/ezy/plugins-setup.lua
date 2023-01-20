@@ -96,6 +96,8 @@ return require('packer').startup(function(use)
   }
 
   use("tanvirtin/vgit.nvim")
+  use("tiagovla/scope.nvim")
+  use("stevearc/aerial.nvim")
 
   -- use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
   -- use("nvim-treesitter/playground")

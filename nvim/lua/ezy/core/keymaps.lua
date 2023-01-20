@@ -145,3 +145,5 @@ vim.keymap.set('n', '<leader>tgb', "<cmd> lua require('vgit').toggle_live_blame(
 
 vim.keymap.set("n", "<leader>cc", "<cmd>cclose<CR>")
 vim.keymap.set("n", "<leader>co", "<cmd>copen<CR>")
+
+vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
