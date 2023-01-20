@@ -76,6 +76,7 @@ return require('packer').startup(function(use)
   -- use("TimUntersberger/neogit")
   use('Mofiqul/vscode.nvim')
   use("akinsho/bufferline.nvim")
+  -- use("stevearc/three.nvim")
   use "moll/vim-bbye"
   use("nanozuki/tabby.nvim")
   use("mg979/vim-visual-multi")

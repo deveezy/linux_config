@@ -3,6 +3,37 @@ if not status_ok then
   return
 end
 
+local icons = require "ezy.plugins.icons"
+
+local function diagnostics_indicator(num, _, diagnostics, _)
+  local result = {}
+  local symbols = {
+    error = icons.diagnostics.Error,
+    warning = icons.diagnostics.Warning,
+    info = icons.diagnostics.Information,
+  }
+  for name, count in pairs(diagnostics) do
+    if symbols[name] and count > 0 then
+      table.insert(result, symbols[name] .. " " .. count)
+    end
+  end
+  result = table.concat(result, " ")
+  return #result > 0 and result or ""
+end
+
+
+local bar_bg = "#3e3634"
+local activeBuffer_bg = "#252222"
+local inactiveBuffer_bg = "#3e3634"
+local activeBuffer_fg = "#fdf6e3"
+local visibleBuffer_fg = "#eee8d5"
+local inactiveBuffer_fg = "#93a1a1"
+local duplicate_fg = "#586e75"
+local modified_fg = "#b58900"
+local info_fg = "#268bd2"
+local warning_fg = "#cb4b16"
+local error_fg = "#dc322f"
+
 bufferline.setup {
   options = {
     numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
@@ -39,6 +70,7 @@ bufferline.setup {
     tab_size = 21,
     diagnostics = "nvim_lsp", -- | "nvim_lsp" | "coc",
     diagnostics_update_in_insert = false,
+    diagnostics_indicator = diagnostics_indicator,
     -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
     --   return "("..count..")"
     -- end,
@@ -74,97 +106,278 @@ bufferline.setup {
     --   return buffer_a.modified > buffer_b.modified
     -- end
   },
+  -- highlights = {
+  --   fill = {
+  --     fg = { attribute = "fg", highlight = "Tabline" },
+  --     bg = { attribute = "bg", highlight = "TabLine" },
+  --   },
+  --   background = {
+  --     fg = { attribute = "fg", highlight = "TabLine" },
+  --     bg = { attribute = "bg", highlight = "TabLine" },
+  --   },
+  --
+  --   -- buffer_selected = {
+  --   --   fg = {attribute='fg',highlight='#ff0000'},
+  --   --   bg = {attribute='bg',highlight='#0000ff'},
+  --   --   gui = 'none'
+  --   --   },
+  --   buffer_visible = {
+  --     fg = { attribute = "fg", highlight = "TabLine" },
+  --     bg = { attribute = "bg", highlight = "TabLine" },
+  --   },
+  --
+  --   close_button = {
+  --     fg = { attribute = "fg", highlight = "TabLine" },
+  --     bg = { attribute = "bg", highlight = "TabLine" },
+  --   },
+  --   close_button_visible = {
+  --     fg = { attribute = "fg", highlight = "TabLine" },
+  --     bg = { attribute = "bg", highlight = "TabLine" },
+  --   },
+  --   -- close_button_selected = {
+  --   --   fg = {attribute='fg',highlight='TabLineSel'},
+  --   --   bg ={attribute='bg',highlight='TabLineSel'}
+  --   --   },
+  --
+  --   tab_selected = {
+  --     fg = { attribute = "fg", highlight = "Normal" },
+  --     bg = { attribute = "bg", highlight = "Normal" },
+  --   },
+  --   tab = {
+  --     fg = { attribute = "fg", highlight = "TabLine" },
+  --     bg = { attribute = "bg", highlight = "TabLine" },
+  --   },
+  --   tab_close = {
+  --     -- fg = {attribute='fg',highlight='LspDiagnosticsDefaultError'},
+  --     fg = { attribute = "fg", highlight = "TabLineSel" },
+  --     bg = { attribute = "bg", highlight = "Normal" },
+  --   },
+  --
+  --   duplicate_selected = {
+  --     fg = { attribute = "fg", highlight = "TabLineSel" },
+  --     bg = { attribute = "bg", highlight = "TabLineSel" },
+  --     italic = true,
+  --   },
+  --   duplicate_visible = {
+  --     fg = { attribute = "fg", highlight = "TabLine" },
+  --     bg = { attribute = "bg", highlight = "TabLine" },
+  --     italic = true,
+  --   },
+  --   duplicate = {
+  --     fg = { attribute = "fg", highlight = "TabLine" },
+  --     bg = { attribute = "bg", highlight = "TabLine" },
+  --     italic = true,
+  --   },
+  --
+  --   modified = {
+  --     fg = { attribute = "fg", highlight = "TabLine" },
+  --     bg = { attribute = "bg", highlight = "TabLine" },
+  --   },
+  --   modified_selected = {
+  --     fg = { attribute = "fg", highlight = "Normal" },
+  --     bg = { attribute = "bg", highlight = "Normal" },
+  --   },
+  --   modified_visible = {
+  --     fg = { attribute = "fg", highlight = "TabLine" },
+  --     bg = { attribute = "bg", highlight = "TabLine" },
+  --   },
+  --
+  --   -- separator = {
+  --   --   fg = { attribute = "bg", highlight = "TabLine" },
+  --   --   bg = { attribute = "bg", highlight = "TabLine" },
+  --   -- },
+  --   -- separator_selected = {
+  --   --   fg = { attribute = "bg", highlight = "Normal" },
+  --   --   bg = { attribute = "bg", highlight = "Normal" },
+  --   -- },
+  --   -- separator_visible = {
+  --   --   fg = {attribute='bg',highlight='TabLine'},
+  --   --   bg = {attribute='bg',highlight='TabLine'}
+  --   --   },
+  --   indicator_selected = {
+  --     fg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
+  --     bg = { attribute = "bg", highlight = "Normal" },
+  --   },
+  -- },
+
   highlights = {
-    fill = {
-      fg = { attribute = "fg", highlight = "Tabline" },
-      bg = { attribute = "bg", highlight = "TabLine" },
-    },
     background = {
-      fg = { attribute = "fg", highlight = "TabLine" },
-      bg = { attribute = "bg", highlight = "TabLine" },
+      fg = inactiveBuffer_fg,
+      bg = inactiveBuffer_bg
     },
-
-    -- buffer_selected = {
-    --   fg = {attribute='fg',highlight='#ff0000'},
-    --   bg = {attribute='bg',highlight='#0000ff'},
-    --   gui = 'none'
-    --   },
-    buffer_visible = {
-      fg = { attribute = "fg", highlight = "TabLine" },
-      bg = { attribute = "bg", highlight = "TabLine" },
-    },
-
-    close_button = {
-      fg = { attribute = "fg", highlight = "TabLine" },
-      bg = { attribute = "bg", highlight = "TabLine" },
-    },
-    close_button_visible = {
-      fg = { attribute = "fg", highlight = "TabLine" },
-      bg = { attribute = "bg", highlight = "TabLine" },
-    },
-    -- close_button_selected = {
-    --   fg = {attribute='fg',highlight='TabLineSel'},
-    --   bg ={attribute='bg',highlight='TabLineSel'}
-    --   },
-
-    tab_selected = {
-      fg = { attribute = "fg", highlight = "Normal" },
-      bg = { attribute = "bg", highlight = "Normal" },
+    fill = {
+      bg = bar_bg,
+      fg = inactiveBuffer_fg
     },
     tab = {
-      fg = { attribute = "fg", highlight = "TabLine" },
-      bg = { attribute = "bg", highlight = "TabLine" },
+      bg = inactiveBuffer_bg,
+      fg = inactiveBuffer_fg
     },
-    tab_close = {
-      -- fg = {attribute='fg',highlight='LspDiagnosticsDefaultError'},
-      fg = { attribute = "fg", highlight = "TabLineSel" },
-      bg = { attribute = "bg", highlight = "Normal" },
+    -- focused window
+    buffer_selected = {
+      fg = activeBuffer_fg,
+      bg = activeBuffer_bg,
+      bold = true
     },
-
+    tab_selected = {
+      fg = activeBuffer_fg,
+      bg = activeBuffer_bg,
+      bold = true
+    },
     duplicate_selected = {
-      fg = { attribute = "fg", highlight = "TabLineSel" },
-      bg = { attribute = "bg", highlight = "TabLineSel" },
-      italic = true,
-    },
-    duplicate_visible = {
-      fg = { attribute = "fg", highlight = "TabLine" },
-      bg = { attribute = "bg", highlight = "TabLine" },
-      italic = true,
-    },
-    duplicate = {
-      fg = { attribute = "fg", highlight = "TabLine" },
-      bg = { attribute = "bg", highlight = "TabLine" },
-      italic = true,
-    },
-
-    modified = {
-      fg = { attribute = "fg", highlight = "TabLine" },
-      bg = { attribute = "bg", highlight = "TabLine" },
-    },
-    modified_selected = {
-      fg = { attribute = "fg", highlight = "Normal" },
-      bg = { attribute = "bg", highlight = "Normal" },
-    },
-    modified_visible = {
-      fg = { attribute = "fg", highlight = "TabLine" },
-      bg = { attribute = "bg", highlight = "TabLine" },
-    },
-
-    separator = {
-      fg = { attribute = "bg", highlight = "TabLine" },
-      bg = { attribute = "bg", highlight = "TabLine" },
+      fg = inactiveBuffer_fg,
+      bg = activeBuffer_bg,
     },
     separator_selected = {
-      fg = { attribute = "bg", highlight = "Normal" },
-      bg = { attribute = "bg", highlight = "Normal" },
+      fg = bar_bg,
+      bg = activeBuffer_bg
     },
-    -- separator_visible = {
-    --   fg = {attribute='bg',highlight='TabLine'},
-    --   bg = {attribute='bg',highlight='TabLine'}
-    --   },
+    -- unfocused opened window
+    buffer_visible = {
+      bg = inactiveBuffer_bg,
+      fg = visibleBuffer_fg
+    },
+    close_button = {
+      bg = inactiveBuffer_bg,
+      fg = inactiveBuffer_fg
+    },
+    close_button_visible = {
+      bg = inactiveBuffer_bg,
+      fg = visibleBuffer_fg
+    },
+    close_button_selected = {
+      fg = activeBuffer_fg,
+      bg = activeBuffer_bg,
+      bold = true
+    },
+    duplicate_visible = {
+      fg = duplicate_fg,
+      bg = inactiveBuffer_bg,
+    },
+    separator_visible = {
+      bg = inactiveBuffer_bg,
+      fg = bar_bg
+    },
+    duplicate = {
+      fg = duplicate_fg,
+      bg = inactiveBuffer_bg,
+    },
+    separator = {
+      bg = inactiveBuffer_bg,
+      fg = bar_bg
+    },
     indicator_selected = {
-      fg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
-      bg = { attribute = "bg", highlight = "Normal" },
+      fg = activeBuffer_fg,
+      bg = activeBuffer_bg
     },
-  },
+    modified_selected = {
+      fg = modified_fg,
+      bg = activeBuffer_bg
+    },
+    modified_visible = {
+      fg = modified_fg,
+      bg = inactiveBuffer_bg
+    },
+    modified = {
+      fg = modified_fg,
+      bg = inactiveBuffer_bg
+    },
+    info_selected = {
+      fg = activeBuffer_fg,
+      bg = activeBuffer_bg,
+      undercurl = true,
+      sp = info_fg
+    },
+    info_visible = {
+      fg = visibleBuffer_fg,
+      bg = inactiveBuffer_bg,
+      undercurl = true,
+      sp = info_fg
+    },
+    info = {
+      fg = inactiveBuffer_fg,
+      bg = inactiveBuffer_bg,
+      undercurl = true,
+      sp = info_fg
+    },
+    info_diagnostic_selected = {
+      fg = info_fg,
+      bg = activeBuffer_bg,
+      bold = true
+    },
+    info_diagnostic_visible = {
+      fg = info_fg,
+      bg = inactiveBuffer_bg,
+      bold = true
+    },
+    info_diagnostic = {
+      fg = info_fg,
+      bg = inactiveBuffer_bg,
+    },
+    warning_selected = {
+      fg = activeBuffer_fg,
+      bg = activeBuffer_bg,
+      undercurl = true,
+      sp = warning_fg
+    },
+    warning_visible = {
+      fg = visibleBuffer_fg,
+      bg = inactiveBuffer_bg,
+      undercurl = true,
+      sp = warning_fg
+    },
+    warning = {
+      fg = inactiveBuffer_fg,
+      bg = inactiveBuffer_bg,
+      undercurl = true,
+      sp = warning_fg
+    },
+    warning_diagnostic_selected = {
+      fg = warning_fg,
+      bg = activeBuffer_bg,
+      bold = true
+    },
+    warning_diagnostic_visible = {
+      fg = warning_fg,
+      bg = inactiveBuffer_bg,
+      bold = true
+    },
+    warning_diagnostic = {
+      fg = warning_fg,
+      bg = inactiveBuffer_bg,
+    },
+    error_selected = {
+      fg = activeBuffer_fg,
+      bg = activeBuffer_bg,
+      undercurl = true,
+      sp = error_fg
+    },
+    error_visible = {
+      fg = visibleBuffer_fg,
+      bg = inactiveBuffer_bg,
+      undercurl = true,
+      sp = error_fg
+    },
+    error = {
+      fg = inactiveBuffer_fg,
+      bg = inactiveBuffer_bg,
+      undercurl = true,
+      sp = error_fg
+    },
+    error_diagnostic_selected = {
+      fg = error_fg,
+      bg = activeBuffer_bg,
+      bold = true
+    },
+    error_diagnostic_visible = {
+      fg = error_fg,
+      bg = inactiveBuffer_bg,
+      bold = true
+    },
+    error_diagnostic = {
+      fg = error_fg,
+      bg = inactiveBuffer_bg,
+    }
+  }
 }
+
