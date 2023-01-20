@@ -57,7 +57,7 @@ vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>") -
 -- find string in current working directory as you type
 vim.keymap.set("n", "<leader>fs", ":lua require'telescope.builtin'.live_grep{ only_cwd = true}<cr>")
 vim.keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
-vim.keymap.set("n", "<leader>fb", ":lua require('telescope.builtin').buffers({ sort_mru = true, sort_lastused = true, ignore_current_buffer = true, only_cwd = true})<cr>") -- list open buffers in current neovim instance
+vim.keymap.set("n", "<leader>b", ":lua require('telescope.builtin').buffers({ sort_mru = true, sort_lastused = true, ignore_current_buffer = true, only_cwd = true})<cr>") -- list open buffers in current neovim instance
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 vim.keymap.set("n", "<leader>pp", "<cmd>Telescope projects<cr>")
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>")
