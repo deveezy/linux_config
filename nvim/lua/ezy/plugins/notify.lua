@@ -49,5 +49,9 @@ vim.notify = function(msg, ...)
     return
   end
 
+  if msg:match("warning: multiple different client offset_encodings") then
+    return
+  end
+
   notify_filter(msg, ...)
 end

@@ -1,39 +1,39 @@
 local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-		vim.cmd [[packadd packer.nvim]]
-		return true
-	end
-	return false
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
 
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-	-- plugin manager
-	use 'wbthomason/packer.nvim'
-	-- colorscheme
-	use("bluz71/vim-nightfly-guicolors")
+  -- plugin manager
+  use 'wbthomason/packer.nvim'
+  -- colorscheme
+  use("bluz71/vim-nightfly-guicolors")
   use("tomasiser/vim-code-dark")
-	-- window navigation ctrl + {motion}
-	use("christoomey/vim-tmux-navigator")
-	-- maximizes and restores current window
-	use("szw/vim-maximizer") 
-	-- surround text
-	use("tpope/vim-surround")
-	-- unified comments
-	use("numToStr/Comment.nvim")
+  -- window navigation ctrl + {motion}
+  use("christoomey/vim-tmux-navigator")
+  -- maximizes and restores current window
+  use("szw/vim-maximizer") 
+  -- surround text
+  use("tpope/vim-surround")
+  -- unified comments
+  use("numToStr/Comment.nvim")
 
-	use("nvim-lua/plenary.nvim")
-	-- file explorer
-	use("nvim-tree/nvim-tree.lua")
-	-- icons in explorer
-	use("kyazdani42/nvim-web-devicons")
-	-- status line
-	use("nvim-lualine/lualine.nvim")
-	-- fuzzy finding w/ telescope
+  use("nvim-lua/plenary.nvim")
+  -- file explorer
+  use("nvim-tree/nvim-tree.lua")
+  -- icons in explorer
+  use("kyazdani42/nvim-web-devicons")
+  -- status line
+  use("nvim-lualine/lualine.nvim")
+  -- fuzzy finding w/ telescope
   -- fuzzy finding w/ telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
@@ -53,7 +53,7 @@ return require('packer').startup(function(use)
   use("windwp/nvim-autopairs")
   use('rmagatti/auto-session')
   use("lukas-reineke/indent-blankline.nvim")
- -- startup
+  -- startup
   use ("goolord/alpha-nvim")
 
   use("rcarriga/nvim-notify")
@@ -71,7 +71,7 @@ return require('packer').startup(function(use)
 
   use("RRethy/vim-illuminate")
   use("Shatur/neovim-session-manager")
-  -- use('lewis6991/gitsigns.nvim')
+  use('lewis6991/gitsigns.nvim')
   use("Pocco81/auto-save.nvim")
   -- use("TimUntersberger/neogit")
   use('Mofiqul/vscode.nvim')
@@ -98,6 +98,7 @@ return require('packer').startup(function(use)
   use("tanvirtin/vgit.nvim")
   use("tiagovla/scope.nvim")
   use("stevearc/aerial.nvim")
+  use("petertriho/nvim-scrollbar")
 
   -- use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
   -- use("nvim-treesitter/playground")
@@ -105,10 +106,10 @@ return require('packer').startup(function(use)
   -- use("clangd/coc-clangd")
   -- use("jackguo380/vim-lsp-cxx-highlight")
   -- 
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if packer_bootstrap then
-		require('packer').sync()
-	end
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
 
