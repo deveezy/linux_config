@@ -35,5 +35,6 @@ require("ezy.plugins.vgit")
 require("ezy.plugins.scope")
 require("ezy.plugins.aerial")
 require("ezy.plugins.scrollbar")
+require("ezy.plugins.auto-save")
 
 -- require("ezy.plugins.three")
