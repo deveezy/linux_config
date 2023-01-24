@@ -147,3 +147,4 @@ vim.keymap.set("n", "<leader>cc", "<cmd>cclose<CR>")
 vim.keymap.set("n", "<leader>co", "<cmd>copen<CR>")
 
 vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
+vim.keymap.set('n', '<C-s>', '<cmd>wa<CR>')
