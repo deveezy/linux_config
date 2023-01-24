@@ -33,7 +33,7 @@ require("scrollbar").setup({
             highlight = "Search",
         },
         Error = {
-            text = { "-", "=" },
+            text = { "E", "=" },
             priority = 2,
             gui=nil,
             color = nil,
@@ -42,7 +42,7 @@ require("scrollbar").setup({
             highlight = "DiagnosticVirtualTextError",
         },
         Warn = {
-            text = { "-", "=" },
+            text = { "W", "=" },
             priority = 3,
             gui=nil,
             color = nil,
@@ -51,7 +51,7 @@ require("scrollbar").setup({
             highlight = "DiagnosticVirtualTextWarn",
         },
         Info = {
-            text = { "-", "=" },
+            text = { "I", "=" },
             priority = 4,
             gui=nil,
             color = nil,
@@ -60,7 +60,7 @@ require("scrollbar").setup({
             highlight = "DiagnosticVirtualTextInfo",
         },
         Hint = {
-            text = { "-", "=" },
+            text = { "H", "=" },
             priority = 5,
             gui=nil,
             color = nil,
