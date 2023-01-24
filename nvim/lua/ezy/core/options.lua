@@ -47,3 +47,7 @@ vim.cmd[[if &filetype == "cpp" || &filetype == "cuda" || &filetype == "c"
   autocmd BufEnter,TextChanged <buffer> lua require 'vim.lsp.buf'.semantic_tokens_full()
 endif
 ]]
+
+opt.updatetime = 300
+opt.incsearch = false
+opt.signcolumn = 'yes'

@@ -37,6 +37,7 @@ local colors = {
 
 local config = {
   options = {
+    globalstatus = true,
     icons_enabled = true,
     component_separators = "",
     section_separators = "",
