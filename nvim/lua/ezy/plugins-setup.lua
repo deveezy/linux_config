@@ -38,6 +38,11 @@ return require('packer').startup(function(use)
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
+  use {'junegunn/fzf', run = function()
+    vim.fn['fzf#install']()
+  end
+}
+
   -- autocompletion
   use("hrsh7th/nvim-cmp")
   use("hrsh7th/cmp-buffer")
@@ -86,7 +91,7 @@ return require('packer').startup(function(use)
   use("neovim/nvim-lspconfig")
   use("williamboman/nvim-lsp-installer")
   use("sbdchd/neoformat")
-  use("p00f/clangd_extensions.nvim")
+  -- use("p00f/clangd_extensions.nvim")
 
   -- use("sindrets/diffview.nvim")
 
@@ -95,11 +100,13 @@ return require('packer').startup(function(use)
     "Badhi/nvim-treesitter-cpp-tools",
   }
 
-  use("tanvirtin/vgit.nvim")
+  -- use("tanvirtin/vgit.nvim")
   use("tiagovla/scope.nvim")
   use("stevearc/aerial.nvim")
   use("petertriho/nvim-scrollbar")
 
+
+  use("kevinhwang91/nvim-bqf")
   -- use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
   -- use("nvim-treesitter/playground")
   -- use{"neoclide/coc.nvim", branch = 'release'}

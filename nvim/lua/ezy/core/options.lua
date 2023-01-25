@@ -49,5 +49,5 @@ endif
 ]]
 
 opt.updatetime = 300
-opt.incsearch = false
+opt.incsearch = true
 opt.signcolumn = 'yes'

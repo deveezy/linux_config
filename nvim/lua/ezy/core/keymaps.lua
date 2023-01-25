@@ -17,7 +17,7 @@ vim.keymap.set("v", "<c-v>", '"+P', {noremap=true, silent=true})
 vim.keymap.set("n", "<leader>sv", "<C-w>v") -- split window veritically
 vim.keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally 
 vim.keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width
-vim.keymap.set("n", "<leader>sc", ":close<CR>") -- close current split window
+vim.keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
 vim.keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
@@ -125,8 +125,6 @@ vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<CR>")
 vim.keymap.set("n", "<leader>m", "<cmd>Neoformat<CR>") -- code format
 
 
-vim.keymap.set("n", "<leader>tt", "<cmd>vim.lsp.semantic_tokens.get_at_pos()<CR>")
-
 -- cmake-tools
 vim.keymap.set("n", "cg", "<cmd>CMakeGenerate<cr>")
 vim.keymap.set("n", "cb", "<cmd>CMakeBuild<cr>")
@@ -143,8 +141,9 @@ vim.keymap.set('n', '<leader>rf', "<cmd>TSCppRuleOf5<CR>")
 
 vim.keymap.set('n', '<leader>tgb', "<cmd> lua require('vgit').toggle_live_blame()<CR>", {noremap = true})
 
-vim.keymap.set("n", "<leader>cc", "<cmd>cclose<CR>")
+vim.keymap.set("n", "<leader>cx", "<cmd>cclose<CR>")
 vim.keymap.set("n", "<leader>co", "<cmd>copen<CR>")
 
 vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
 vim.keymap.set('n', '<C-s>', '<cmd>wa<CR>')
+vim.keymap.set('n', '<C-q>', '<cmd>q<CR>')
