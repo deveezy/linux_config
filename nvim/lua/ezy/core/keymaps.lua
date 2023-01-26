@@ -128,8 +128,9 @@ vim.keymap.set("n", "<leader>m", "<cmd>Neoformat<CR>") -- code format
 -- cmake-tools
 vim.keymap.set("n", "cg", "<cmd>CMakeGenerate<cr>")
 vim.keymap.set("n", "cb", "<cmd>CMakeBuild<cr>")
-vim.keymap.set("n", "<F5>", "<cmd>CMakeRun<cr>")
-vim.keymap.set("n", "<C-F5>", "<cmd>CMakeDebug<cr>")
+vim.keymap.set("n", '<F17>', "<cmd>CMakeRun<cr>")
+
+vim.keymap.set("n", "<F5>", "<cmd>CMakeDebug<cr>")
 vim.keymap.set("n", "cs", "<cmd>CMakeStop<cr>")
 vim.keymap.set("n", "co", "<cmd>CMakeOpen<cr>")
 vim.keymap.set("n", "cx", "<cmd>CMakeClose<cr>")
@@ -147,3 +148,12 @@ vim.keymap.set("n", "<leader>co", "<cmd>copen<CR>")
 vim.keymap.set('n', '<leader>a', '<cmd>AerialToggle!<CR>')
 vim.keymap.set('n', '<C-s>', '<cmd>wa<CR>')
 vim.keymap.set('n', '<C-q>', '<cmd>q<CR>')
+
+-- debugging
+-- vim.keymap.set("n", "<C-F5>", ":lua require'dap'.continue()<CR>")
+vim.keymap.set("n", "<F10>", ":lua require'dap'.step_over()<CR>")
+vim.keymap.set("n", "<F11>", ":lua require'dap'.step_into()<CR>")
+vim.keymap.set("n", "<F12>", ":lua require'dap'.step_out()<CR>")
+vim.keymap.set("n", "<F9>", ":lua require'dap'.toggle_breakpoint()<CR>")
+
+

@@ -35,5 +35,7 @@ require("ezy.plugins.aerial")
 require("ezy.plugins.scrollbar")
 require("ezy.plugins.auto-save")
 require("ezy.plugins.bqf")
+require("ezy.plugins.dap")
+require("ezy.plugins.dap-gui")
 
 -- require("ezy.plugins.three")
