@@ -14,15 +14,15 @@ require("scrollbar").setup({
         hide_if_all_visible = true, -- Hides handle if all lines are visible
     },
     marks = {
-        Cursor = {
-            text = "	≡",
-            priority = 0,
-            gui=nil,
-            color = nil,
-            cterm=nil,
-            color_nr = nil, -- cterm
-            highlight = "Normal",
-        },
+        -- Cursor = {
+        --     text = "	≡",
+        --     priority = 0,
+        --     gui=nil,
+        --     color = nil,
+        --     cterm=nil,
+        --     color_nr = nil, -- cterm
+        --     highlight = "Normal",
+        -- },
         Search = {
             text = { "-", "=" },
             priority = 1,
@@ -107,11 +107,13 @@ require("scrollbar").setup({
     },
     excluded_buftypes = {
         "terminal",
+        "NvimTree"
     },
     excluded_filetypes = {
         "prompt",
         "TelescopePrompt",
         "noice",
+        "NvimTree"
     },
     autocmd = {
         render = {
