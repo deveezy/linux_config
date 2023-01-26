@@ -64,9 +64,13 @@ vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>")
 vim.keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>")
 
 -- renamer
-vim.keymap.set("n", "<F2>", "<cmd>lua require('renamer').rename({emty = true})<cr>")
+--[[ vim.keymap.set("n", "<F2>", "<cmd>lua require('renamer').rename({emty = true})<cr>")
 vim.keymap.set("i", "<F2>", "<cmd>lua require('renamer').rename({emty = true})<cr>")
 vim.keymap.set("v", "<F2>", "<cmd>lua require('renamer').rename({emty = true})<cr>")
+ ]]
+
+local bufopts = { noremap=true, silent=true}
+vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, bufopts)
 
 -- browser
 vim.keymap.set("n", "<m-o>", "<cmd>BrowseBookmarks<cr>")
