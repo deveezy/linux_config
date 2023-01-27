@@ -324,11 +324,6 @@ _G.packer_plugins = {
     path = "/home/noname/.local/share/nvim/site/pack/packer/start/vim-code-dark",
     url = "https://github.com/tomasiser/vim-code-dark"
   },
-  ["vim-illuminate"] = {
-    loaded = true,
-    path = "/home/noname/.local/share/nvim/site/pack/packer/start/vim-illuminate",
-    url = "https://github.com/RRethy/vim-illuminate"
-  },
   ["vim-matchup"] = {
     loaded = true,
     path = "/home/noname/.local/share/nvim/site/pack/packer/start/vim-matchup",
