@@ -61,7 +61,7 @@ return require('packer').startup(function(use)
   -- startup
   use ("goolord/alpha-nvim")
 
-  use("rcarriga/nvim-notify")
+  -- use("rcarriga/nvim-notify")
   use("stevearc/dressing.nvim")
   use("lewis6991/impatient.nvim")
   use("lalitmee/browse.nvim")
@@ -105,6 +105,8 @@ return require('packer').startup(function(use)
   use("stevearc/aerial.nvim")
   use("petertriho/nvim-scrollbar")
 
+  use("williamboman/mason.nvim")
+ use('williamboman/mason-lspconfig.nvim') 
 
   use("kevinhwang91/nvim-bqf")
   -- use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
