@@ -91,7 +91,6 @@ return require('packer').startup(function(use)
   -- LSP
   use("neovim/nvim-lspconfig")
   use("williamboman/nvim-lsp-installer")
-  use("sbdchd/neoformat")
   -- use("p00f/clangd_extensions.nvim")
 
   -- use("sindrets/diffview.nvim")

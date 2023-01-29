@@ -38,5 +38,6 @@ require("ezy.plugins.bqf")
 require("ezy.plugins.dap")
 require("ezy.plugins.dap-gui")
 require("ezy.plugins.mason")
+require("ezy.plugins.null-ls")
 
 -- require("ezy.plugins.three")

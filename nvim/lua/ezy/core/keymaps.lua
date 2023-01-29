@@ -126,7 +126,7 @@ vim.keymap.set("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>")
 vim.keymap.set("n", "<leader>'", "<cmd>ClangdSwitchSourceHeader<CR>")
 vim.keymap.set('n', 'gR', vim.lsp.buf.references)
 vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<CR>")
-vim.keymap.set("n", "<leader>m", "<cmd>Neoformat<CR>") -- code format
+-- vim.keymap.set("n", "<leader>m", "<cmd>Neoformat<CR>") -- code format
 
 
 -- cmake-tools
