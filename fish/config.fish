@@ -5,6 +5,7 @@ end
 set -Ux EDITOR nvim
 set -U fish_greeting
 fish_add_path /home/deveezy/.local/bin/poetry
+fish_add_path /home/deveezy/.cargo/bin
 set -x SUDO_ASKPASS "/usr/lib/ssh/x11-ssh-askpass"
 
 # Start X at login

@@ -69,8 +69,6 @@ vim.keymap.set("i", "<F2>", "<cmd>lua require('renamer').rename({emty = true})<c
 vim.keymap.set("v", "<F2>", "<cmd>lua require('renamer').rename({emty = true})<cr>")
  ]]
 
-local bufopts = { noremap=true, silent=true}
-vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, bufopts)
 
 -- browser
 vim.keymap.set("n", "<m-o>", "<cmd>BrowseBookmarks<cr>")
@@ -99,34 +97,6 @@ vim.keymap.set("n", "Q", "<cmd>:bufdo :Bdelete!<CR>")
 vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
 vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
 
-local opts = { noremap = true, silent = true }
-show_documentation = function()
-  local filetype = vim.bo.filetype
-  if vim.tbl_contains({ "vim", "help" }, filetype) then
-    vim.cmd("h " .. vim.fn.expand "<cword>")
-  elseif vim.tbl_contains({ "man" }, filetype) then
-    vim.cmd("Man " .. vim.fn.expand "<cword>")
-  else
-    vim.lsp.buf.hover()
-  end
-end
-
-vim.keymap.set("n", "K", ":lua show_documentation()<CR>")
-vim.keymap.set("n", "gd", vim.lsp.buf.definition)
-vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
-vim.keymap.set("n", "gt", vim.lsp.buf.type_definition)
-vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
-vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next)
-vim.keymap.set("n", "<leader>dp", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "<leader>dl", "<cmd> Telescope diagnostics<CR>")
-vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>")
-vim.keymap.set("n", "gh", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
-vim.keymap.set("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<CR>")
-vim.keymap.set("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>")
-vim.keymap.set("n", "<leader>'", "<cmd>ClangdSwitchSourceHeader<CR>")
-vim.keymap.set('n', 'gR', vim.lsp.buf.references)
-vim.keymap.set('n', 'gr', "<cmd>Telescope lsp_references<CR>")
-vim.keymap.set("n", "<leader>m", vim.lsp.buf.format)
 
 
 -- cmake-tools
