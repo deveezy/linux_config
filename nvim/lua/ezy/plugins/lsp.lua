@@ -2,86 +2,102 @@ local M = {}
 
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_cmp_ok then
-	return
+  return
 end
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
 
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.offsetEncoding = { "utf-16" }
+-- require("lspconfig").clangd.setup({ capabilities = capabilities })
+
 setup = function()
-	local signs = {
+  local signs = {
 
-		{ name = "DiagnosticSignError", text = "" },
-		{ name = "DiagnosticSignWarn", text = "" },
-		{ name = "DiagnosticSignHint", text = "" },
-		{ name = "DiagnosticSignInfo", text = "" },
-	}
+    { name = "DiagnosticSignError", text = "" },
+    { name = "DiagnosticSignWarn", text = "" },
+    { name = "DiagnosticSignHint", text = "" },
+    { name = "DiagnosticSignInfo", text = "" },
+  }
 
-	for _, sign in ipairs(signs) do
-		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-	end
+  for _, sign in ipairs(signs) do
+    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+  end
 
-	local config = {
-		virtual_text = false, -- disable virtual text
-		signs = {
-			active = signs, -- show signs
-		},
-		update_in_insert = true,
-		underline = true,
-		severity_sort = true,
-		float = {
-			focusable = true,
-			style = "minimal",
-			border = "rounded",
-			source = "always",
-			header = "",
-			prefix = "",
-		},
-	}
+  local config = {
+    virtual_text = false, -- disable virtual text
+    signs = {
+      active = signs, -- show signs
+    },
+    update_in_insert = true,
+    underline = true,
+    severity_sort = true,
+    float = {
+      focusable = true,
+      style = "minimal",
+      border = "rounded",
+      source = "always",
+      header = "",
+      prefix = "",
+    },
+  }
 
-	vim.diagnostic.config(config)
+  vim.diagnostic.config(config)
 
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
-	})
+  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = "rounded",
+  })
 
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "rounded",
-	})
+  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+    border = "rounded",
+  })
 end
 
 M.on_attach = function(client, bufnr)
-	if client.name == "tsserver" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
+  if client.name == "tsserver" then
+    client.server_capabilities.documentFormattingProvider = false
+  end
 
-	if client.name == "sumneko_lua" then
-		client.server_capabilities.documentFormattingProvider = false
-	end
+  if client.name == "sumneko_lua" then
+    client.server_capabilities.documentFormattingProvider = false
+  end
 
-	lsp_keymaps(bufnr)
-	local status_ok, illuminate = pcall(require, "illuminate")
-	if not status_ok then
-		return
-	end
-	illuminate.on_attach(client)
+  lsp_keymaps(bufnr)
+  local status_ok, illuminate = pcall(require, "illuminate")
+  if not status_ok then
+    return
+  end
+  illuminate.on_attach(client)
 end
 
 setup()
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities2 = require('cmp_nvim_lsp').default_capabilities()
 
-require'lspconfig'.clangd.setup {
-   capabilities = capabilities
-   --    textDocument = {
-   --       semanticHighlightingCapabilities = {
-   --          semanticHighlighting = true
-   --       }
-   --    }
-   -- }
-} 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = capabilities2
+capabilities.offsetEncoding = { "utf-16" }
 
+require'lspconfig'.clangd.setup ({
+  capabilities = capabilities
+})  
+
+vim.cmd([[
+
+if executable('cmake-language-server')
+  au User lsp_setup call lsp#register_server({
+  \ 'name': 'cmake',
+  \ 'cmd': {server_info->['cmake-language-server']},
+  \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'build/'))},
+  \ 'whitelist': ['cmake'],
+  \ 'initialization_options': {
+  \   'buildDirectory': 'build',
+  \ }
+  \})
+endif
+]])
 -- require("clangd_extensions").setup {
 --     server = {
 --         -- options to pass to nvim-lspconfig
