@@ -31,7 +31,6 @@ opt.backspace = "indent,eol,start"
 -- split windows
 opt.splitright = true
 opt.splitbelow = true
-opt.iskeyword:append("-")
 
 opt.showtabline = 2
 opt.hidden = true

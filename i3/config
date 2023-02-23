@@ -16,6 +16,7 @@ exec --no-startup-id nitrogen --restore
 # exec sleep 1
 
 set $mod Mod4
+set $modAlt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -111,6 +112,32 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+set $mm HDMI-1
+set $sm DP-4
+
+workspace 1 output $mm
+workspace 2 output $mm
+workspace 3 output $mm
+workspace 4 output $mm
+workspace 5 output $mm
+workspace 6 output $mm
+workspace 7 output $mm
+workspace 8 output $mm
+workspace 9 output $mm
+workspace 10 output $mm
+
+workspace 11 output $sm
+workspace 12 output $sm
+workspace 13 output $sm
+workspace 14 output $sm
+workspace 15 output $sm
+workspace 16 output $sm
+workspace 17 output $sm
+workspace 18 output $sm
+workspace 19 output $sm
+workspace 10 output $sm
+
+
 # focus the child container
 #bindsym $mod+d focus child
 
@@ -127,6 +154,17 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+set $ws11 "11"
+set $ws12 "12"
+set $ws13 "13"
+set $ws14 "14"
+set $ws15 "15"
+set $ws16 "16"
+set $ws17 "17"
+set $ws18 "18"
+set $ws19 "19"
+set $ws20 "20"
+
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -139,6 +177,18 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
+bindsym $modAlt+1 workspace number $ws11
+bindsym $modAlt+2 workspace number $ws12
+bindsym $modAlt+3 workspace number $ws13
+bindsym $modAlt+4 workspace number $ws14
+bindsym $modAlt+5 workspace number $ws15
+bindsym $modAlt+6 workspace number $ws16
+bindsym $modAlt+7 workspace number $ws17
+bindsym $modAlt+8 workspace number $ws18
+bindsym $modAlt+9 workspace number $ws19
+bindsym $modAlt+0 workspace number $ws20
+
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -150,6 +200,18 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+bindsym $modAlt+$Mod+1 move container to workspace number $ws11
+bindsym $modAlt+$Mod+2 move container to workspace number $ws12
+bindsym $modAlt+$Mod+3 move container to workspace number $ws13
+bindsym $modAlt+$Mod+4 move container to workspace number $ws14
+bindsym $modAlt+$Mod+5 move container to workspace number $ws15
+bindsym $modAlt+$Mod+6 move container to workspace number $ws16
+bindsym $modAlt+$Mod+7 move container to workspace number $ws17
+bindsym $modAlt+$Mod+8 move container to workspace number $ws18
+bindsym $modAlt+$Mod+9 move container to workspace number $ws19
+bindsym $modAlt+$Mod+0 move container to workspace number $ws20
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -205,6 +267,7 @@ client.unfocused            $bg        $bg         $ia
 client.focused_inactive     $bg        $bg         $ac
 client.urgent               $rd        $rd         $tx
 
+exec_always --no-startup-id $HOME/.screenlayout/main.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id xset r rate 280 40
 exec_always --no-startup-id setxkbmap -layout us,ru -option grp:alt_shift_toggle
