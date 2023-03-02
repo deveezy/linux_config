@@ -112,8 +112,8 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-set $mm HDMI-1
-set $sm DP-4
+set $mm HDMI-0
+set $sm DP-2
 
 workspace 1 output $mm
 workspace 2 output $mm
@@ -267,7 +267,7 @@ client.unfocused            $bg        $bg         $ia
 client.focused_inactive     $bg        $bg         $ac
 client.urgent               $rd        $rd         $tx
 
-exec_always --no-startup-id $HOME/.screenlayout/main.sh
+exec_always --no-startup-id $HOME/.screenlayout/main2.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id xset r rate 280 40
 exec_always --no-startup-id setxkbmap -layout us,ru -option grp:alt_shift_toggle
