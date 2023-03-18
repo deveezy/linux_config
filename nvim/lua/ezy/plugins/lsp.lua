@@ -195,9 +195,7 @@ end
 
 
 vim.api.nvim_set_hl(0, "@namespace", { fg = "#d7d7d7" })
-vim.api.nvim_set_hl(0, "@class", { fg = "#4ec9b0" })
 vim.api.nvim_set_hl(0, "@enum", { fg = "#4ec9b0" })
-vim.api.nvim_set_hl(0, "@enumMember", { fg = "#adde9c" })
 vim.api.nvim_set_hl(0, "@comment", { fg = "#6e6e6e" })
 vim.api.nvim_set_hl(0, "Comment", { fg = "#6e6e6e" })
 vim.api.nvim_set_hl(0, "@property", { fg = "#ffffff" })
@@ -210,6 +208,14 @@ vim.api.nvim_set_hl(0, "@parameter", { fg = "#969798" })
 vim.api.nvim_set_hl(0, "Label", { fg = "#569cd6" })
 vim.api.nvim_set_hl(0, "Operator", { fg = "#569cd6" })
 
-vim.api.nvim_set_hl(0, "@variable.fileScope", { fg = "#ffffff" })
+vim.api.nvim_set_hl(0, "@lsp.type.class.cpp", { fg = "#4ec9b0" })
+vim.api.nvim_set_hl(0, "@lsp.type.namespace.cpp", { fg = "#d7d7d7" })
+vim.api.nvim_set_hl(0, "@lsp.type.enumMember.cpp", { fg = "#adde9c" })
+vim.api.nvim_set_hl(0, "@lsp.type.enum.cpp", { fg = "#4ec9b0" })
+vim.api.nvim_set_hl(0, "@lsp.type.parameter.cpp", { fg = "#969798" })
+vim.api.nvim_set_hl(0, "@lsp.type.property.cpp", { fg = "#ffffff" })
+vim.api.nvim_set_hl(0, "@lsp.type.comment.cpp", { fg = "#474d4d" })
+
+vim.api.nvim_set_hl(0, "@lsp.typemod.variable.fileScope.cpp", { fg = "#ffffff" })
 -- hi @variable.fileScope guifg=#000000
 -- :hi @variable.readonly fg=green
